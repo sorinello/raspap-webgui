@@ -380,6 +380,6 @@ function install_raspap_bridge() {
 sudo rm -rf /var/www/html && install_log "[Cleanup]: Delete /var/www/html"
 sudo mkdir -p /var/www/html && install_log "[Simulate lighttpd]: Create /var/www/html"
 rm -rf /tmp/raspap-webgui && install_log "Temporary Clean-up"
-sudo apt-get install -y bridge-utils && install_log "Installing bridge-utils package"
+sudo apt-get install -y lighttpd git hostapd dnsmasq vnstat bridge-utils && install_log "Installing required packages"
 install_raspap_bridge
 
