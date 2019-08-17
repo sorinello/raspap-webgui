@@ -7,7 +7,7 @@
 raspap_dir="/etc/raspap"
 raspap_user="www-data"
 webroot_dir="/var/www/html" 
-version=10 ##REVERT
+version=`sed 's/\..*//' /etc/debian_version`
 
 # Determine Raspbian version, set default home location for lighttpd and 
 # php package to install 
