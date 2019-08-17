@@ -29,7 +29,7 @@ set -- "${positional[@]}"
 
 echo "Stopping network services..."
 systemctl stop hostapd.service
-#systemctl stop dnsmasq.service
+systemctl stop dnsmasq.service
 systemctl stop dhcpcd.service
 
 if [ -r "$CONFIGFILE" ]; then
@@ -56,15 +56,10 @@ echo "Starting network services..."
 systemctl start hostapd.service
 sleep "${seconds}"
 
-#sudo brctl addbr br0
-#sudo brctl addif br0 eth0
-
-
 systemctl start dhcpcd.service
 sleep "${seconds}"
 
-#We don't use dnsmasq service in bridged mode
-#systemctl start dnsmasq.service
+systemctl start dnsmasq.service
 
 echo "RaspAP service start DONE"
 

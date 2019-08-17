@@ -209,7 +209,7 @@ function default_configuration_bridged() {
     sudo cp $webroot_dir/config/default_hostapd /etc/default/hostapd || install_error "Unable to move hostapd defaults file"
     sudo cp $webroot_dir/config/hostapd_bridged.conf /etc/hostapd/hostapd.conf || install_error "Unable to move hostapd_bridged configuration file"
     #sudo cp $webroot_dir/config/dnsmasq.conf /etc/dnsmasq.conf || install_error "Unable to move dnsmasq configuration file"
-    sudo cp $webroot_dir/config/dhcpcd_bridged.conf /etc/dhcpcd.conf || install_error "Unable to move dhcpcd configuration file"
+    sudo cp $webroot_dir/config/dhcpcd_bridged.conf /etc/dhcpcd.conf || install_error "Unable to move dhcpcd_bridged configuration file"
     sudo cp $webroot_dir/config/interfaces_bridged /etc/network/interfaces || install_error "Unable to move interfaces_bridged configuration file"
     # Generate required lines for Rasp AP to place into rc.local file.
     # #RASPAP is for removal script
@@ -281,9 +281,9 @@ function patch_system_files() {
         "/bin/cp /etc/raspap/networking/dhcpcd.conf /etc/dhcpcd.conf"
         "/etc/raspap/hostapd/enablelog.sh"
         "/etc/raspap/hostapd/disablelog.sh"
+        "/etc/raspap/hostapd/servicestart.sh"
         "/etc/raspap/hostapd/servicestart_bridged.sh"
     )
-
     # Check if sudoers needs patching
     if [ $(sudo grep -c www-data /etc/sudoers) -ne 28 ]
     then
