@@ -373,7 +373,7 @@ function install_raspap_bridge() {
     change_file_ownership
     create_hostapd_scripts
     move_config_file
-    default_configuration
+    default_configuration_bridged
     patch_system_files
     install_complete
 }
