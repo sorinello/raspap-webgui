@@ -56,8 +56,8 @@ echo "Starting network services..."
 systemctl start hostapd.service
 sleep "${seconds}"
 
-sudo brctl addbr br0
-sudo brctl addif br0 eth0
+#sudo brctl addbr br0
+#sudo brctl addif br0 eth0
 
 
 systemctl start dhcpcd.service
