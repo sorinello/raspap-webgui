@@ -10,4 +10,5 @@ iface wlan0 inet manual
 
 # Create the bridge
 auto br0
-iface br0 inet dhcp
+iface br0 inet manual
+bridge_ports eth0 wlan0
